@@ -7,14 +7,17 @@
 ## If there is already a cached calculation of the inverse it skips the
 ## recalculation and returns the cached inverse
 ##
-## The structure was borrowed heavily from the following repo:
+## Manual testing of these functions are commented out at the end of this script
+##
+## The program was developed from the following repo's "makeVector" and "cachemean" functions:
 ## https://github.com/rdpeng/ProgrammingAssignment2
-## 
+##
 ## Further documentation and explanations of the functions in the "rdpeng" repo above can be found at:
 ## https://github.com/lgreski/datasciencectacontent/blob/master/markdown/rprog-breakingDownMakeVector.md
 ########################################################################################################
 
 
+## makeCacheMatrix(mat = matrix())
 ## This function creates a special "matrix" object that can cache its inverse.
 ## It creates 4 functions: "set", "get", "setinv", and "getinv"
 ## It also creates 2 variables: "mat", and "inv"
@@ -49,6 +52,7 @@ makeCacheMatrix <- function(mat = matrix()) {
 }
 
 
+## cacheSolve(x, ...)
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
 ## If the inverse has already been calculated (and the matrix has not changed),
 ## then cacheSolve retrieves the inverse from the cache.
